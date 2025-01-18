@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-blue-900 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-white">Visit-To-Explore</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a id="contact" href="#" class="text-white hover:underline">Contact</a>
+                    <a id="about" href="#" class="text-white hover:underline">About</a>
+                    <a id="about" href="pages/upload/upload.html" class="text-white hover:underline">upload blog</a>
+                    <a id="loginLink" href="pages/signin/login.html" class="text-white hover:underline">Sign In</a>
+                    <a id="signupLink" href="pages/signup/signup.html" class="text-white hover:underline">Sign Up</a>
+                    <button onclick="logout()" id="logoutBtn" href="pages/signup/signup.html" class="text-white mx-4 hidden bg-blue-700 p-2 rounded">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Cover Section -->
+    <section class="flex items-center justify-between bg-cover bg-center h-screen" style="background-image: url('path_to_cover_photo.jpg');">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-4 py-16">
+            <!-- Left Side: Brand Name and Signup -->
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-5xl font-bold text-blue-900">Welcome to Our Blog</h1>
+                <p class="mt-4 text-lg text-gray-400">Join us today and stay updated with the latest blogs.</p>
+                <a href="#" class="mt-6 inline-block bg-blue-900 text-white py-3 px-6 rounded-md text-lg font-medium hover:bg-blue-700">Sign Up</a>
+            </div>
+            <!-- Right Side: Cover Photo -->
+            <div class="md:w-1/2 flex justify-center">
+                <img src="./images/img5.jpeg" alt="Cover Image" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+       <!-- Hero Section 
+       <section class="bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-4 py-16">
+            <div class="md:w-1/2 md:pr-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">Discover Your Next Favorite Product</h1>
+                <p class="text-gray-600 mb-8">Explore our wide range of products and find the perfect items that suit your taste and style.</p>
+                <a href="#" class="bg-blue-500 text-white font-bold px-6 py-3 rounded-lg shadow hover:bg-sky-700">Shop Now</a>
+            </div>
+            <div class="md:w-2/6 mt-10 md:mt-0">
+                <img src="" alt="Hero Image" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>-->
+    <!-- latest bloges-->
+    <div class="container mx-auto py-10">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Latest Blogs</h1>
+
+        <div id="blogParent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog Card -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./images/img1.jpeg" alt="Blog Image">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-2">A new Journey</h2>
+                    <p class="text-gray-600 mb-4">by <span class="font-semibold">Username1</span> · 2 hours ago</p>
+                    <div class="flex items-center justify-between">
+                        <button class="like-button flex items-center text-gray-500 hover:text-red-500 transition duration-300">
+                            <i class="far fa-heart text-2xl"></i>
+                            <span class="ml-2">Like</span>
+                        </button>
+                        <span class="like-count text-gray-500">0 Likes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat similar cards for other blogs -->
+            <!-- Blog Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./images/img2.jpeg" alt="Blog Image">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-2">ColorfuLL Life</h2>
+                    <p class="text-gray-600 mb-4">by <span class="font-semibold">Username2</span> · 5 hours ago</p>
+                    <div class="flex items-center justify-between">
+                        <button class="like-button flex items-center text-gray-500 hover:text-red-500 transition duration-300">
+                            <i class="far fa-heart text-2xl"></i>
+                            <span class="ml-2">Like</span>
+                        </button>
+                        <span class="like-count text-gray-500">0 Likes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./images/img3.jpeg" alt="Blog Image">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-2">Destiny On the Way</h2>
+                    <p class="text-gray-600 mb-4">by <span class="font-semibold">Username3</span> · 1 day ago</p>
+                    <div class="flex items-center justify-between">
+                        <button class="like-button flex items-center text-gray-500 hover:text-red-500 transition duration-300">
+                            <i class="far fa-heart text-2xl"></i>
+                            <span class="ml-2">Like</span>
+                        </button>
+                        <span class="like-count text-gray-500">0 Likes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more blog cards as needed -->
+        </div>
+    </div>
+
+    <!-- Future Blog Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Future Blogs</h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Blog Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover" src="./images/img4.jpeg" alt="Blog Image 1">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">Reptiles</h3>
+                        <p class="mt-2 text-gray-600">A brief description of the blog post goes here.</p>
+                        <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-700">Read More</a>
+                    </div>
+                </div>
+                <!-- Blog Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover" src="./images/img6.jpeg" alt="Blog Image 2">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">Moon Dawn</h3>
+                        <p class="mt-2 text-gray-600">A brief description of the blog post goes here.</p>
+                        <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-700">Read More</a>
+                    </div>
+                </div>
+                <!-- Blog Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img class="w-full h-48 object-cover" src="./images/img7.jpeg" alt="Blog Image 3">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">Mind Set</h3>
+                        <p class="mt-2 text-gray-600">A brief description of the blog post goes here.</p>
+                        <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-700">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Total Users and Bloggers Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Our Community</h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+                <!-- Total Users -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Total Users</h3>
+                    <p class="mt-4 text-4xl font-extrabold text-blue-600">15,000+</p>
+                    <p class="mt-2 text-gray-600">Join a large community of users who trust our platform.</p>
+                </div>
+                <!-- Total Bloggers -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Total Bloggers</h3>
+                    <p class="mt-4 text-4xl font-extrabold text-blue-600">500+</p>
+                    <p class="mt-2 text-gray-600">Connect with hundreds of bloggers sharing their thoughts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-3">
+            <!-- Section 1: About Us -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">About Us</h3>
+                <p class="text-gray-400">We are committed to providing the best blogging platform for our users. Our mission is to empower everyone to share their voice and connect with the world.</p>
+            </div>
+            <!-- Section 2: Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-500">Home</a></li>
+                    <li><a href="#" class="hover:text-blue-500">About</a></li>
+                    <li><a href="#" class="hover:text-blue-500">Contact</a></li>
+                    <li><a href="#" class="hover:text-blue-500">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <!-- Section 3: Contact Us -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                <p class="text-gray-400">Have any questions? Reach out to us at:</p>
+                <p class="mt-2 text-gray-400">Email: support@Visit-To-Explore.com</p>
+                <p class="mt-2 text-gray-400">Phone: +1 234 567 890</p>
+            </div>
+        </div>
+        <div class="mt-8 text-center text-gray-500">
+            &copy; 2024 BrandName. All rights reserved.
+        </div>
+    </footer>
+    <script type="module" src="app.js"></script>
+    <script>
+        // Select all like buttons
+        const likeButtons = document.querySelectorAll('.like-button');
+
+        likeButtons.forEach(button => {
+            let liked = false;
+            let likeCountSpan = button.nextElementSibling;
+            let count = 0;
+
+            button.addEventListener('click', () => {
+                const heartIcon = button.querySelector('i');
+
+                if (!liked) {
+                    heartIcon.classList.remove('far');
+                    heartIcon.classList.add('fas', 'text-red-500');
+                    count++;
+                    liked = true;
+                } else {
+                    heartIcon.classList.remove('fas', 'text-red-500');
+                    heartIcon.classList.add('far');
+                    count--;
+                    liked = false;
+                }
+
+                likeCountSpan.textContent = `${count} ${count === 1 ? 'Like' : 'Likes'}`;
+            });
+        });
+    </script>
+</body>
+</html>
